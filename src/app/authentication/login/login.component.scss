@@ -1,5 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+
 .container {
-    padding: 36px 36px 0px 36px;
+    background-color: white;
+    padding: 36px;
 }
 
 .welcome-header {
@@ -33,12 +41,12 @@
 }
 
 input {
-    width: 342px;
+    width: 300px;
     height: 40px;
 }
 
 button {
-    width: 342px;
+    width: 300px;
     height: 40px;
     background-color: #ff3c6f;
     outline: none;
@@ -55,7 +63,7 @@ button:focus {
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-float-label input:focus ~ label {
+::ng-deep .p-float-label input:focus~label {
     margin-left: -12px !important;
     color: #ff3c6f;
 }
