@@ -1,0 +1,70 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+
+.container {
+    width: 100%;
+    background-color: white;
+    padding: 36px;
+}
+
+.welcome-header {
+    // font-family: ;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mobileInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.floatLabel {
+    margin-top: 24px !important;
+}
+
+.midLinks {
+    margin-top: 24px;
+    font-size: 12.1px;
+    line-height: 17px;
+    margin-bottom: 24px;
+}
+
+
+.midLinks a {
+    cursor: pointer;
+    color: #ff3c6f;
+    font-weight: 700;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+}
+
+button {
+    width: 300px;
+    height: 40px;
+    background-color: #ff3c6f;
+    outline: none;
+    border: #ff3c6f;
+}
+
+button:focus {
+    box-shadow: none;
+}
+
+.p-inputtext:focus {
+    box-shadow: 0 0 0 1px #ff3c6f !important;
+    outline: 1px solid #ff3c6f !important;
+    border-color: #ff3c6f !important;
+}
+
+::ng-deep .p-float-label input:focus~label {
+    margin-left: -12px !important;
+    color: #ff3c6f;
+}
