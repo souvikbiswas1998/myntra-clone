@@ -1,1 +1,30 @@
 <router-outlet></router-outlet>
+
+<button routerLink="/auth/sign-up">sign-up</button>
+<button routerLink="/auth/login">login</button>
+
+
+<mat-toolbar class="toolbarNav" *ngIf="showBottomNav">
+    <div class="toolbar-container">
+        <div class="toolbar-items" routerLink="/top-artists">
+            <mat-icon routerLinkActive="active-link">home</mat-icon>
+            <span>Home</span>
+        </div>
+        <div class="toolbar-items" routerLink="/top-artists">
+            <mat-icon routerLinkActive="active-link">shopping_cart_checkout</mat-icon>
+            <span>Cart</span>
+        </div>
+        <div class="toolbar-items" routerLink="/top-artists">
+            <mat-icon routerLinkActive="active-link">category</mat-icon>
+            <span>Categories</span>
+        </div>
+        <div class="toolbar-items" routerLink="/top-artists">
+            <mat-icon routerLinkActive="active-link">trending_up</mat-icon>
+            <span>Trending</span>
+        </div>
+        <div class="toolbar-items" routerLink="/top-artists">
+            <mat-icon routerLinkActive="active-link">account_circle</mat-icon>
+            <span>Profile</span>
+        </div>
+    </div>
+</mat-toolbar>
