@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
 }
 
 .container {
-    background-color: white;
-    padding: 36px;
+    padding: 36px 36px 0px 36px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .welcome-header {
@@ -16,11 +16,7 @@
     font-weight: 700;
 }
 
-.mobileInputContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
+.mobileInputContainer {}
 
 .floatLabel {
     margin-top: 24px !important;
@@ -28,7 +24,7 @@
 
 .midLinks {
     margin-top: 24px;
-    font-size: 12.1px;
+    font-size: 11px;
     line-height: 17px;
     margin-bottom: 24px;
 }
@@ -41,13 +37,15 @@
 }
 
 input {
-    width: 300px;
-    height: 40px;
+    <<<<<<< HEAD width: 300px;
+    =======width: 100%;
+    >>>>>>>ca5ef65d84a2cf9666a466d49c9815c6bdf7b675 height: 40px;
 }
 
 button {
-    width: 300px;
-    height: 40px;
+    <<<<<<< HEAD width: 300px;
+    =======width: 100%;
+    >>>>>>>ca5ef65d84a2cf9666a466d49c9815c6bdf7b675 height: 40px;
     background-color: #ff3c6f;
     outline: none;
     border: #ff3c6f;
