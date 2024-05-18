@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet>
 
 <button routerLink="/auth/sign-up">sign-up</button>
 <button routerLink="/auth/login">login</button>
@@ -28,3 +28,15 @@
         </div>
     </div>
 </mat-toolbar>
+ -->
+
+<h1>A very simple liveQuery() example</h1>
+
+<div *ngFor="let todoList of todoLists$ | async; trackBy: identifyList">
+    <itemlist [todoList]="todoList"></itemlist>
+</div>
+<label>
+    Add new list:
+    <input autocomplete="off" type="text" id="name" #name [(ngModel)]="listName" />
+</label>
+<button type="submit" (click)="addNewList()">Add new list</button>

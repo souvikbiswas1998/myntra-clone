@@ -1,0 +1,23 @@
+<h3>{{ todoList.title }}</h3>
+
+<!--
+    Adding item form
+-->
+<label>
+    Add item:
+    <input autocomplete="off" type="text" id="name" #name [(ngModel)]="itemName" />
+</label>
+<input #image id="file" type="file" accept="image/*" hidden (change)="onDrop($event.target)">
+<button mat-stroked-button color="primary" (click)="image.click()">Select a Photo</button>
+<button type="submit" (click)="addItem()">Add ToDo</button>
+
+<!-- Rendering todoItems$ -->
+<ul>
+    <li *ngFor="let item of todoItems$ | async">
+        {{ item.title }}
+        <img [src]="item.image" [srcset]="item.image" *ngIf="item.image" style="height: 160px; width: auto;" />
+        <button (click)="deleteList(item.id)">Delete</button>
+    </li>
+</ul>
+
+<button (click)="dropList()">Clear all list item</button>
