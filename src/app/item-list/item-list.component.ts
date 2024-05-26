@@ -83,7 +83,7 @@ export class ItemListComponent implements OnChanges {
 
   compress(string: string | undefined) {
     const byteArray = new TextEncoder().encode(string);
-    const cs = new CompressionStream('gzip');
+    const cs = new CompressionStream('deflate-raw');
     const writer = cs.writable.getWriter();
     writer.write(byteArray);
     writer.close();
@@ -92,7 +92,7 @@ export class ItemListComponent implements OnChanges {
 
   decompress(byteArray: any) {
     console.log(byteArray);
-    const cs = new DecompressionStream('gzip');
+    const cs = new DecompressionStream('deflate-raw');
     const writer = cs.writable.getWriter();
     writer.write(byteArray);
     writer.close();
