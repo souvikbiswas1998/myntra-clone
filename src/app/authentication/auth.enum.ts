@@ -1,3 +1,3 @@
-export enum AuthEndPoints{
-    Login='/login'
+export enum AuthEndPoints {
+    Login = '/login'
 }

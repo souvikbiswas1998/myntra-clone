@@ -8,6 +8,8 @@ import { AuthService } from '../auth.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 import { UsersService } from '../../users.service';
 import { Users, db } from '../../index.db';
+import { CommonService } from '../../common.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup<AuthenticationForm>
 
   constructor(private authService: AuthService, private authenticatedUserData: UsersService,
-    private destroyRef: DestroyRef) { }
+    private destroyRef: DestroyRef, public commonService: CommonService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.setForm()
@@ -31,7 +33,6 @@ export class LoginComponent implements OnInit {
     this.loginForm = new FormGroup<AuthenticationForm>({
       email: new FormControl('', [Validators.email, Validators.required]),
       password: new FormControl('', [Validators.minLength(8), Validators.maxLength(20),
-      Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"),
       Validators.required]),
     })
   }
@@ -45,11 +46,14 @@ export class LoginComponent implements OnInit {
             this.authenticatedUserData.user$.subscribe((userTableData: Users[]) => {
 
             })
-          })
+          }, (c) => this.commonService.showError('Error', 'Internal Error'))
+        }, (err) => {
+          this.commonService.showError(err.error.errMsg, err.error?.data?.message)
         })
     }
     else {
-
+      if (this.loginForm.controls.email?.errors) this.commonService.showError('Email', 'Either Empty or Invalid')
+      if (this.loginForm.controls.password?.errors) this.commonService.showError('Password', 'Either Empty or Invalid')
     }
   }
 
