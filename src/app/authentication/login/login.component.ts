@@ -10,11 +10,11 @@ import { UsersService } from '../../users.service';
 import { Users, db } from '../../index.db';
 import { CommonService } from '../../common.service';
 import { MessageService } from 'primeng/api';
-
+import { PasswordModule } from 'primeng/password';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputTextModule, FloatLabelModule, ButtonModule, FormsModule, ReactiveFormsModule],
+  imports: [InputTextModule, FloatLabelModule, ButtonModule, FormsModule, ReactiveFormsModule, PasswordModule],
   providers: [AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -46,14 +46,17 @@ export class LoginComponent implements OnInit {
             this.authenticatedUserData.user$.subscribe((userTableData: Users[]) => {
 
             })
-          }, (c) => this.commonService.showError('Error', 'Internal Error'))
+          }, (c) => this.commonService.errorToast('Error', 'Internal Error'))
         }, (err) => {
-          this.commonService.showError(err.error.errMsg, err.error?.data?.message)
+          this.commonService.errorToast(err.error.errMsg, err.error?.data?.message)
         })
     }
     else {
-      if (this.loginForm.controls.email?.errors) this.commonService.showError('Email', 'Either Empty or Invalid')
-      if (this.loginForm.controls.password?.errors) this.commonService.showError('Password', 'Either Empty or Invalid')
+      if (!this.loginForm.get('email')?.value && !this.loginForm.get('password')?.value) {
+        return this.commonService.errorToast('All Fields are required')
+      }
+      if (this.loginForm.controls.email?.errors) this.commonService.errorToast('Email', 'Either Empty or Invalid')
+      if (this.loginForm.controls.password?.errors) this.commonService.errorToast('Password', 'Either Empty or Invalid')
     }
   }
 
