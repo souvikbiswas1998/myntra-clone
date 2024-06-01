@@ -3,13 +3,13 @@
     <div class="mobileInputContainer">
         <div class="floatLabel">
             <p-floatLabel>
-                <input type="text" pInputText id="email" formControlName="email" />
+                <input type="text" autocomplete="off" pInputText id="email" formControlName="email" />
                 <label for="email">Email</label>
             </p-floatLabel>
         </div>
         <div class="floatLabel">
             <p-floatLabel>
-                <p-password id="password1" type="password" class="w-full" [feedback]="false" placeholder="Password"
+                <p-password id="password1" type="password" class="w-full" [feedback]="false"
                     formControlName="password" styleClass="p-password p-component p-inputwrapper p-input-icon-right"
                     [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [toggleMask]="true"></p-password>
                 <label for="password">Password</label>

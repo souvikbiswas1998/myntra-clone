@@ -57,8 +57,7 @@ button:focus {
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-float-label input:focus~label {
-    margin-left: -12px !important;
+:host ::ng-deep .p-float-label input:focus~label {
     color: #ff3c6f;
 }
 
@@ -68,22 +67,34 @@ input:hover {
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-inputtext:enabled:hover {
+:host ::ng-deep .p-inputtext:enabled:hover {
     box-shadow: 0 0 0 1px #ff3c6f !important;
     outline: 1px solid #ff3c6f !important;
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-inputtext:enabled:focus {
+:host ::ng-deep .p-inputtext:enabled:focus {
     box-shadow: 0 0 0 1px #ff3c6f !important;
     outline: 1px solid #ff3c6f !important;
     border-color: #ff3c6f !important;
 }
 
-::ng-deep p-password.ng-invalid.ng-dirty > .p-password > .p-inputtext {
-    border-color: #d1d5db !important;
+:host ::ng-deep p-password.ng-invalid.ng-dirty > .p-password > .p-inputtext {
+    box-shadow: 0 0 0 1px #ff3c6f !important;
+    outline: 1px solid #ff3c6f !important;
+    border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-float-label > .ng-invalid.ng-dirty + label {
+:host ::ng-deep .p-float-label > .ng-invalid.ng-dirty + label {
+    color: #ff3c6f;
+}
+
+:host ::ng-deep .p-inputtext.ng-dirty.ng-invalid {
+    box-shadow: 0 0 0 1px #ff3c6f !important;
+    outline: 1px solid #ff3c6f !important;
+    border-color: #ff3c6f !important;
+}
+
+.p-inputwrapper-focus ~ label, .p-float-label .p-inputwrapper-filled ~ label {
     color: #ff3c6f;
 }
