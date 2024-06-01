@@ -61,7 +61,13 @@ button:focus {
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-float-label input:focus~label {
-    margin-left: -12px !important;
-    color: #ff3c6f;
+// ::ng-deep .p-float-label input:focus~label {
+//     margin-left: -12px !important;
+//     color: #ff3c6f;
+// }
+
+input:hover {
+    box-shadow: 0 0 0 1px #ff3c6f !important;
+    outline: 1px solid #ff3c6f !important;
+    border-color: #ff3c6f !important;
 }

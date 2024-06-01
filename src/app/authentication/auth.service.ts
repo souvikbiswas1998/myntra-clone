@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/internal/Observable';
+import { environment } from '../../environments/environment.development';
+import { LoginApiResponse } from './auth.interface';
+import { AuthEndPoints } from './auth.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,7 @@ export class AuthService {
     console.log(environment.from);
   }
 
-  loginWithEmailAndPassword(email: string, password: string): Observable<any> {
-    
-    // return this.http.post<any[]>("https://backend.safaryaara.com/get-user", data)
-    return this.http.post<any[]>(environment.backendUrl + 'auth/login', { email, password })
+  loginWithEmailAndPassword(email: string, password: string): Observable<LoginApiResponse> {
+    return this.http.post<LoginApiResponse>(environment.backendUrl + AuthEndPoints.Login, { email, password })
   }
 }
