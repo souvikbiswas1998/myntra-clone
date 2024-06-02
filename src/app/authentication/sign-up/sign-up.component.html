@@ -1,6 +1,12 @@
-<div class="container">
-    <div class="welcome-header">Login</div>
+<div class="container" [formGroup]="signUpForm">
+    <div class="welcome-header">Sign up</div>
     <div class="mobileInputContainer">
+        <div class="floatLabel">
+            <p-floatLabel>
+                <input type="text" pInputText id="name" formControlName="name" />
+                <label for="name">Name</label>
+            </p-floatLabel>
+        </div>
         <div class="floatLabel">
             <p-floatLabel>
                 <input type="text" pInputText id="email" formControlName="email" />
@@ -9,14 +15,20 @@
         </div>
         <div class="floatLabel">
             <p-floatLabel>
-                <input type="text" pInputText id="password" formControlName="email" />
-                <label for="password">Password</label>
+                <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber" />
+                <label for="phoneNumber">Phone</label>
+            </p-floatLabel>
+        </div>
+        <div class="floatLabel">
+            <p-floatLabel>
+                <input type="text" pInputText id="password" formControlName="password" />
+                <label for=" password">Password</label>
             </p-floatLabel>
         </div>
         <div class="midLinks">By continuing, I agree to the <a href="/termsofuse">Terms of Use</a> &amp;
             <a href="/privacypolicy">Privacy Policy</a>
         </div>
-        <button pButton pRipple label="Submit"></button>
+        <button pButton pRipple label="Submit" (click)="onSubmit()"></button>
     </div>
 
 </div>

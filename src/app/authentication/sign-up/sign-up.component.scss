@@ -25,6 +25,7 @@
 
 .floatLabel {
     margin-top: 24px !important;
+    width: 100%;
 }
 
 .midLinks {
@@ -42,12 +43,12 @@
 }
 
 input {
-    width: 300px;
+    width: 100%;
     height: 40px;
 }
 
 button {
-    width: 300px;
+    width: 100%;
     height: 40px;
     background-color: #ff3c6f;
     outline: none;
@@ -64,7 +65,12 @@ button:focus {
     border-color: #ff3c6f !important;
 }
 
-::ng-deep .p-float-label input:focus~label {
-    margin-left: -12px !important;
-    color: #ff3c6f;
-}
+// ::ng-deep .p-float-label input:focus~label {
+//     margin-left: -12px !important;
+//     color: #ff3c6f;
+// }   ng-invalid
+
+// ::ng-deep .p-float-label label {
+//     // margin-left: -12px !important;
+//     color: #ff3c6f;
+// }
